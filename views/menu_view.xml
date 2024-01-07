@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- views -->
+    <menuitem id="custom_product_menu" 
+        name="Products" 
+        web_icon="custom_product,static/description/icon.png"
+        sequence="10" />
+
+        <menuitem id="custom_product_menu_catalog"
+            parent="custom_product_menu"
+            name="Products" 
+            sequence="10" />
+
+            <menuitem id="custom_menu_product_template_action"
+                parent="custom_product_menu_catalog"
+                action="sale.product_template_action"
+                sequence="10"/>
+                
+            <menuitem id="custom_menu_products"
+                parent="custom_product_menu_catalog"
+                action="product.product_normal_action_sell"
+                groups="product.group_product_variant"
+                sequence="20"/>
+</odoo>
